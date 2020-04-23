@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02E81BC4-D8BE-4184-9869-0311D0CD142D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PNRFinisher.My.MyApplication</StartupObject>
+    <RootNamespace>PNRFinisher</RootNamespace>
+    <AssemblyName>PNRFinisher</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PNRFinisher.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PNRFinisher.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Travelport.Smartpoint">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.Smartpoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Travelport.TravelData">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Travelport\Smartpoint\Travelport.TravelData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AirlineNotesCollection.vb" />
+    <Compile Include="Classes\AirlineNotesItem.vb" />
+    <Compile Include="Classes\AirlinePointsCollection.vb" />
+    <Compile Include="Classes\Airlines.vb" />
+    <Compile Include="Classes\Airport.vb" />
+    <Compile Include="Classes\AlertsCollection.vb" />
+    <Compile Include="Classes\AlertsItem.vb" />
+    <Compile Include="Classes\ApisPaxCollection.vb" />
+    <Compile Include="Classes\ApisPaxItem.vb" />
+    <Compile Include="Classes\ClassOfServiceCollection.vb" />
+    <Compile Include="Classes\CloseOffEntriesCollection.vb" />
+    <Compile Include="Classes\CloseOffEntriesItem.vb" />
+    <Compile Include="Classes\ConditionalGDSEntryCollection.vb" />
+    <Compile Include="Classes\ConditionalGDSEntryItem.vb" />
+    <Compile Include="Classes\Config.vb" />
+    <Compile Include="Classes\CostCentreLookupCollection.vb" />
+    <Compile Include="Classes\CostCentreLookupItem.vb" />
+    <Compile Include="Classes\CustomerCollection.vb" />
+    <Compile Include="Classes\CustomerGroupCollection.vb" />
+    <Compile Include="Classes\CustomerGroupCollectionAll.vb" />
+    <Compile Include="Classes\CustomerGroupItem.vb" />
+    <Compile Include="Classes\DBUser.vb" />
+    <Compile Include="Classes\DownsellCollection.vb" />
+    <Compile Include="Classes\DownsellItem.vb" />
+    <Compile Include="Classes\ExportDataGrid.vb" />
+    <Compile Include="Classes\GDSUser.vb" />
+    <Compile Include="Classes\GDS_BOReferenceCollection.vb" />
+    <Compile Include="Classes\GDS_BOReferenceItem.vb" />
+    <Compile Include="Classes\GreekToLatin.vb" />
+    <Compile Include="Classes\ItnRTBDoc.vb" />
+    <Compile Include="Classes\ItnWebDoc.vb" />
+    <Compile Include="Classes\ItnWebDocElements.vb" />
+    <Compile Include="Classes\OSMAddressCollection.vb" />
+    <Compile Include="Classes\OSMAddressItem.vb" />
+    <Compile Include="Classes\OSMElements.vb" />
+    <Compile Include="Classes\OSMLog.vb" />
+    <Compile Include="Classes\OSMVesselCollection.vb" />
+    <Compile Include="Classes\OSMVesselGroupCollection.vb" />
+    <Compile Include="Classes\OSMVesselGroupItem.vb" />
+    <Compile Include="Classes\OSMVesselItem.vb" />
+    <Compile Include="Classes\OSMVessel_VesselGroupCollection.vb" />
+    <Compile Include="Classes\OSMVessel_VesselGroupItem.vb" />
+    <Compile Include="Classes\OSMWebDoc.vb" />
+    <Compile Include="Classes\PNRFinisherTransactions.vb" />
+    <Compile Include="Classes\ReferenceCountriesCollection.vb" />
+    <Compile Include="Classes\ReferenceSalutationsCollection.vb" />
+    <Compile Include="Classes\RemarksCollection.vb" />
+    <Compile Include="Classes\RemarksItem.vb" />
+    <Compile Include="Classes\VesselCollection.vb" />
+    <Compile Include="Forms\frmAPISPax.designer.vb">
+      <DependentUpon>frmAPISPax.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAPISPax.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAPISPaxSelect.designer.vb">
+      <DependentUpon>frmAPISPaxSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAPISPaxSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCostCentre.designer.vb">
+      <DependentUpon>frmCostCentre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCostCentre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOSMAddVessel.designer.vb">
+      <DependentUpon>frmOSMAddVessel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOSMAddVessel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOSMAgents.designer.vb">
+      <DependentUpon>frmOSMAgents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOSMAgents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOSMLoG.designer.vb">
+      <DependentUpon>frmOSMLoG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOSMLoG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOSMVessels.designer.vb">
+      <DependentUpon>frmOSMVessels.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOSMVessels.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPriceOptimiser.designer.vb">
+      <DependentUpon>frmPriceOptimiser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPriceOptimiser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmShowOptions.designer.vb">
+      <DependentUpon>frmShowOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmShowOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUser.designer.vb">
+      <DependentUpon>frmUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVesselForPNR.designer.vb">
+      <DependentUpon>frmVesselForPNR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVesselForPNR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\_Version.vb" />
+    <Compile Include="Itinerary Helper\IHItinCollection.vb" />
+    <Compile Include="Itinerary Helper\IHItinItem.vb" />
+    <Compile Include="Modules\mod1A.vb" />
+    <Compile Include="Modules\modAPIS.vb" />
+    <Compile Include="Modules\modOSM.vb" />
+    <Compile Include="Modules\modPNR.vb" />
+    <Compile Include="PaxCTC\BackOfficeCollection.vb" />
+    <Compile Include="PaxCTC\BackOfficeItem.vb" />
+    <Compile Include="Classes\BaggageAllowanceCollection.vb" />
+    <Compile Include="Classes\BaggageAllowanceItem.vb" />
+    <Compile Include="Classes\ClassOfServiceItem.vb" />
+    <Compile Include="Classes\CO2Item.vb" />
+    <Compile Include="Classes\CRMCollection.vb" />
+    <Compile Include="Classes\CRMItem.vb" />
+    <Compile Include="Classes\CustomerCollectionAll.vb" />
+    <Compile Include="Classes\CustomerItem.vb" />
+    <Compile Include="Classes\CustomPropertiesCollection.vb" />
+    <Compile Include="Classes\CustomPropertiesItem.vb" />
+    <Compile Include="Classes\CustomPropertiesValues.vb" />
+    <Compile Include="Classes\CustomPropertiesXMLValues.vb" />
+    <Compile Include="Classes\DICollection.vb" />
+    <Compile Include="Classes\DIItem.vb" />
+    <Compile Include="Classes\EmailCollection.vb" />
+    <Compile Include="Classes\EmailItem.vb" />
+    <Compile Include="Classes\FrequentFlyerCollection.vb" />
+    <Compile Include="Classes\FrequentFlyerItem.vb" />
+    <Compile Include="Classes\GDSAssociationsCollection.vb" />
+    <Compile Include="Classes\GDSExistingCollection.vb" />
+    <Compile Include="Classes\GDSExistingItem.vb" />
+    <Compile Include="Classes\GDSItineraryRemarksCollection.vb" />
+    <Compile Include="Classes\GDSItineraryRemarksItem.vb" />
+    <Compile Include="Classes\GDSNewCollection.vb" />
+    <Compile Include="Classes\GDSNewItem.vb" />
+    <Compile Include="Classes\GDSNumberParser.vb" />
+    <Compile Include="Classes\GDSPaxCollection.vb" />
+    <Compile Include="Classes\GDSPaxItem.vb" />
+    <Compile Include="Classes\GDSReadPNR.vb" />
+    <Compile Include="Classes\GDSReadPNR1G.vb" />
+    <Compile Include="Classes\GDSSegCollection.vb" />
+    <Compile Include="Classes\GDSSegItem.vb" />
+    <Compile Include="Classes\GDSTicketCollection.vb" />
+    <Compile Include="Classes\GDSTicketItem.vb" />
+    <Compile Include="Classes\OpenSegmentCollection.vb" />
+    <Compile Include="Classes\OpenSegmentItem.vb" />
+    <Compile Include="Classes\OptionQueueCollection.vb" />
+    <Compile Include="Classes\OptionQueueItem.vb" />
+    <Compile Include="Classes\OSMEmailCollection.vb" />
+    <Compile Include="Classes\OSMEmailItem.vb" />
+    <Compile Include="Classes\OSMPaxCollection.vb" />
+    <Compile Include="Classes\OSMPaxItem.vb" />
+    <Compile Include="Classes\PhoneNumbersCollection.vb" />
+    <Compile Include="Classes\PhoneNumbersItem.vb" />
+    <Compile Include="Classes\ReferenceGenderCollection.vb" />
+    <Compile Include="Classes\ReferenceItem.vb" />
+    <Compile Include="Classes\SSRCollection.vb" />
+    <Compile Include="Classes\SSRitem.vb" />
+    <Compile Include="Classes\SubDepartmentCollection.vb" />
+    <Compile Include="Classes\SubDepartmentItem.vb" />
+    <Compile Include="Classes\TicketElementItem.vb" />
+    <Compile Include="Classes\UtilitiesDB.vb" />
+    <Compile Include="Classes\VesselItem.vb" />
+    <Compile Include="Forms\frm01Main.designer.vb">
+      <DependentUpon>frm01Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm01Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm02Finisher.designer.vb">
+      <DependentUpon>frm02Finisher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm02Finisher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm03Itinerary.designer.vb">
+      <DependentUpon>frm03Itinerary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm03Itinerary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm04OSM.designer.vb">
+      <DependentUpon>frm04OSM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm04OSM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Itinerary Helper\frmItineraryHelper.designer.vb">
+      <DependentUpon>frmItineraryHelper.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Itinerary Helper\frmItineraryHelper.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Itinerary Helper\IHAirportCollection.vb" />
+    <Compile Include="Itinerary Helper\IHAirportItem.vb" />
+    <Compile Include="Modules\modEnums.vb" />
+    <Compile Include="Modules\modPriceOptimizer.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PaxCTC\CTCPax.vb" />
+    <Compile Include="PaxCTC\CTCPaxCollection.vb" />
+    <Compile Include="PaxCTC\frmPaxCTC.designer.vb">
+      <DependentUpon>frmPaxCTC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaxCTC\frmPaxCTC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaxCTC\frmPaxCTCOnlyPax.designer.vb">
+      <DependentUpon>frmPaxCTCOnlyPax.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaxCTC\frmPaxCTCOnlyPax.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\frm01Main.resx">
+      <DependentUpon>frm01Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm02Finisher.resx">
+      <DependentUpon>frm02Finisher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm03Itinerary.resx">
+      <DependentUpon>frm03Itinerary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm04OSM.resx">
+      <DependentUpon>frm04OSM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAPISPax.resx">
+      <DependentUpon>frmAPISPax.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAPISPaxSelect.resx">
+      <DependentUpon>frmAPISPaxSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCostCentre.resx">
+      <DependentUpon>frmCostCentre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOSMAddVessel.resx">
+      <DependentUpon>frmOSMAddVessel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOSMAgents.resx">
+      <DependentUpon>frmOSMAgents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOSMLoG.resx">
+      <DependentUpon>frmOSMLoG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOSMVessels.resx">
+      <DependentUpon>frmOSMVessels.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPriceOptimiser.resx">
+      <DependentUpon>frmPriceOptimiser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShowOptions.resx">
+      <DependentUpon>frmShowOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUser.resx">
+      <DependentUpon>frmUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVesselForPNR.resx">
+      <DependentUpon>frmVesselForPNR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Itinerary Helper\frmItineraryHelper.resx">
+      <DependentUpon>frmItineraryHelper.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaxCTC\frmPaxCTC.resx">
+      <DependentUpon>frmPaxCTC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaxCTC\frmPaxCTCOnlyPax.resx">
+      <DependentUpon>frmPaxCTCOnlyPax.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="k1aHostConstantsLib">
+      <Guid>{24103141-FAF1-11D1-BE3C-000083270237}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="k1aHostInterface">
+      <Guid>{A4D24A60-0756-11D2-BE3E-000083270237}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="k1aHostToolKit">
+      <Guid>{F7BB0B4D-0783-11D2-BE3E-000083270237}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="s1aAirlineDate">
+      <Guid>{405DE3B7-0CBA-11D1-80ED-000083262C75}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="s1aPNR">
+      <Guid>{2B999FE1-68B2-11D0-9771-00008322DB13}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
